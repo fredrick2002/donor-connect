@@ -1,0 +1,40 @@
+.home-top{
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.search{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 4px;
+    gap: 8px;
+    width: 815px;
+
+    background: #FFFFFF;
+    /* s1 */
+
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+.blood-group{
+    box-sizing: border-box;
+
+    /* Auto layout */
+    align-items: flex-start;
+    padding: 14px 8px;
+    gap: 16px;
+    margin-right: 20px;
+    margin-left: auto;
+    width: 400px;
+    
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+

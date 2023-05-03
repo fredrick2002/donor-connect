@@ -1,0 +1,40 @@
+.regbar{
+    display: flex;
+}
+
+.regbar-img{
+    width: 216px;
+    height: 156px;
+    background: url(service-gd20c0ab66_1920);
+}
+
+.regbar-content{
+    flex-direction: column;
+    padding-left: 29px;
+    padding-top: 30px;
+}
+
+.regbar-content-title{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 65px;
+
+    color: rgba(0, 0, 0, 0.63)
+}
+
+.regbar-content-para{
+    /* savelife/secondary_title */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: rgba(0, 0, 0, 0.63);
+
+}
