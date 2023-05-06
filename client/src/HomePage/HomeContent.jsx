@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './HomeContent.css'
+import Content from './Content'
 
 function HomeContent() {
 
@@ -34,6 +35,12 @@ function HomeContent() {
                             ))}
                         </select>
                 </div>
+            </div>
+            <div className="home-content">
+                <Content/>
+                <Content/>
+                <Content/>
+                <Content/>
             </div>
         </div>
     );

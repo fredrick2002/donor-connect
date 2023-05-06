@@ -1,0 +1,128 @@
+.header{
+    font-size: 36px;
+    color: rgb(255, 0, 0);
+    left: 16px;
+    font-family: Inter, 'Poppins';
+    }
+    .descri{
+        font-style: normal;
+        font-weight: 300;
+        font-size:26px;
+        line-height:0em;
+        color: rgba(0, 0, 0, 0.6);
+        left: 16px;
+        font-family: Inter, 'Poppins';
+        }
+        .login{
+            color: #DA2F47;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 130px;
+            font-family: Inter, 'Poppins';
+        }
+        .space{
+            line-height:0em;
+        }
+        .title{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 2ch;
+            color: rgba(0, 0, 0, 0.7); 
+            left: 16px;
+            font-family: Inter, 'Poppins';
+            
+            
+        }
+        .input{
+            background: #FFFFFF;
+        
+            
+            border: 1px solid rgba(221, 221, 221, 0.9);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 16px;
+            gap: 8px;
+        
+            width: 380px;
+            height: 20px;
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            left: 16px;
+            
+            color: rgba(0, 0, 0, 0.3);
+            font-family: Inter, 'Poppins';
+        
+        }
+        .input::placeholder{
+            color:rgba(221, 221, 221, 0.9);
+        }
+        .input{
+            color: black;
+            
+        }
+        .forget{
+            width: 156px;
+            height: 26px;
+        
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 450;
+            font-size: 17px;
+            line-height: 26px;
+            /* identical to box height */
+        
+        
+            color: #0076FF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+            
+            font-family: Inter, 'Poppins';
+        }             
+        .button1{
+            background: rgba(220, 0, 0, 0.84);
+            border-radius: 8px;
+            width: 300px;
+            height: 50px;
+            margin-left: 55px;
+            color: #FFFFFF;
+            font-weight: 500;
+            font-size: 20px;
+            
+        
+        }
+        .end2{
+            width: 300px;
+            height: 26px;
+            right:868px;
+            margin-left: 70px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 350;
+            font-size: 17px;
+            line-height: 220px;
+            
+        }
+       .image1{
+            margin-left: 640px;
+            width: 645px;
+            position: absolute;
+            height: 2940x;
+        
+       }
+       img{
+        max-width: 100%;
+        max-height: 100%;
+    
+    }

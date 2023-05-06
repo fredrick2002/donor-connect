@@ -1,0 +1,67 @@
+.navbar{
+    background-color:  #ffebeb;
+    padding: 33px 3px;
+    
+
+}
+.navbar-title{
+    font-size: 28px;
+    font-weight: 600;
+    position: absolute;
+    color: #DA2F47;
+    margin-left: 30px;
+}
+.icon1{
+    
+    margin-left: 390px;
+    color: #DA2F47;
+    width: 19px;
+    padding-top: 22px;
+    position: absolute;
+    height: 30px;
+    
+}
+.navbar-location{
+    
+    margin-left: 410px;
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 7px;
+    text-decoration-line: underline;
+    position: absolute;
+    
+
+
+}
+.icon2{
+    margin-left: 960px;
+    color: #DA2F47;
+    width: 19px;
+    padding-top: 22px;
+    position: absolute;
+    height: 30px;
+
+}
+.navbar-faq{
+    margin-left: 985px;
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 7px;
+    position: absolute;
+}
+.icon3{
+    margin-left: 1120px;
+    color: #DA2F47;
+    width: 19px;
+    padding-top: 22px;
+    position: absolute;
+    height: 30px;
+
+}
+.navbar-profile{
+    margin-left: 1145px;
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 7px;
+
+}

@@ -1,6 +1,7 @@
 import './RegForm.css'
 import { useState } from 'react'
 // import ArrowDown from '../assets/arrow-down.svg'
+import {Link} from 'react-router-dom'
 
 function RegForm() {
 
@@ -87,10 +88,6 @@ function RegForm() {
 
       const [isChecked, setIsChecked] = useState(false);
 
-    //   const handleCheckboxChange = (event) => {
-    //     setIsChecked(event.target.checked);
-    //   };
-    
 
 
     return(
@@ -98,8 +95,8 @@ function RegForm() {
 
             <p className='regform-p'>Full Name</p>
             <div className='regform-ip-name'>
-                <input className='regform-name' type='text' name="FirstName" id='FirstName' placeholder='First Name'></input>
-                <input className='regform-name' type='text' name='LastName' id='LastName' placeholder='Last Name'></input>
+                <input className='regform-name' type='text' name="fname" id='fname' placeholder='First Name'></input>
+                <input className='regform-name' type='text' name='lname' id='lname' placeholder='Last Name'></input>
             </div>
 
             <p className='regform-p'>Date of Birth</p>
@@ -213,7 +210,7 @@ function RegForm() {
             </div>
 
 
-            <button type="submit" className='regform-submit'>Submit</button>
+            <Link to='/home'><button type="submit" className='regform-submit'>Submit</button></Link> 
 
         </form>
     );
