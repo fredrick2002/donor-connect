@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-const { application } = require("express");
+
 
 const db = mysql.createPool({
     host : "localhost",
@@ -32,13 +32,13 @@ app.post("/api/submitReg",(req,res) =>{
     const bloodgrp = req.body.bloodgrp
     const city = req.body.city
     const state = req.body.state
-    // const donate_blood = req.body.donate_blood
+    const donate_blood = req.body.donate_blood
+    const password = req.body.password;
 
     
-    const sqlRegInsert= "INSERT INTO user_reg(`first_name`,`last_name`,`dob`,`ph_no`,`email`,`flat_no`,`area`,`pincode`,`gender`,`blood_grp`,`city`,`state`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-    db.query(sqlRegInsert,[first_name,last_name,dob,ph_no,email,flat_no,area,pincode,gender,bloodgrp,city,state], (err,result)=>{
+    const sqlRegInsert= "INSERT INTO user_reg(`first_name`,`last_name`,`dob`,`ph_no`,`email`,`flat_no`,`area`,`pincode`,`gender`,`blood_grp`,`city`,`state`,`donate_blood`,`password`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    db.query(sqlRegInsert,[first_name,last_name,dob,ph_no,email,flat_no,area,pincode,gender,bloodgrp,city,state,donate_blood,password], (err,result)=>{
         console.log(result);
-
     });
 })
 

@@ -47,9 +47,10 @@ function RegForm() {
         bloodgrp: bloodgrp,
         city: city,
         state: state,
-        donate_blood: donate_blood
+        donate_blood: donate_blood,
+        password: password
     }).then(()=>{
-        alert("successfully insert");
+        console.log("Insert Successfully")
     });
     };
 
@@ -268,18 +269,18 @@ function RegForm() {
                 <p className='regform'>Have you donated blood before?</p>
                 <div className="round-checkbox-container">
                     <label htmlFor="yes-checkbox">Yes</label>
-                    <input id="yes-checkbox" type="radio" value="yes" checked={donate_blood === true || donate_blood === "yes"} onChange={() => setDonateblood("yes")} />
+                    <input id="yes-checkbox" type="radio" value="yes" checked={donate_blood === true || donate_blood === "yes"} onChange={() => setDonateblood(true)} />
                     <span className="round-checkbox"></span>
                 </div>
                 <div className="round-checkbox-container">
                     <label htmlFor="no-checkbox">No</label>
-                    <input id="no-checkbox" type="radio" value="no" checked={donate_blood === false || donate_blood === "no"} onChange={() => setDonateblood("no")} />
+                    <input id="no-checkbox" type="radio" value="no" checked={donate_blood === false || donate_blood === "no"} onChange={() => setDonateblood(false)} />
                     <span className="round-checkbox"></span>
                 </div>
             </div>
 
 
-            <Link to='/home'><button type="submit" className='regform-submit'>Submit</button></Link> 
+            <Link to='/home'><button type="submit" className='regform-submit' onClick={submitReg}>Submit</button></Link> 
 
         </form>
     );
