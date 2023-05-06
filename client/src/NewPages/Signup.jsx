@@ -1,7 +1,8 @@
 import "./Signup.css"
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import img from '../assets/donorconnect.jpg'
 import { useState } from 'react';
+import Axios from 'axios';
 
 export default function Registration()
 {
@@ -9,26 +10,35 @@ export default function Registration()
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isChecked, setIsChecked] = useState(false);
+  const [isEmailCheck,setEmailCheck] = useState('');
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === '' || password === '' || confirmPassword === '') {
-      alert('Please fill in all the mandatory fields.');
-    } 
-    else if (password !== confirmPassword) {
-      alert('The password and confirm password fields do not match.');
-    } 
-    else if (!isChecked){
-      alert('Agree the Terms and Condition')
-    }else {
-      sessionStorage.setItem('email', email);
-      sessionStorage.setItem('password', password);
-      // Redirect to the next page
-      window.location.href = '/registration';
-    }
+
+    Axios.get(`http://localhost:3001/api/emailVal?email=${email}`).then((response) => {
+      const { email: isEmailCheck } = response.data;
+    setEmailCheck(isEmailCheck);
+    console.log(response);
+    })
+
+  if (isEmailCheck === true) {
+    alert('This email has already been used');
+  } else if (email === '' || password === '' || confirmPassword === '') {
+    alert('Please fill in all the mandatory fields.');
+  } else if (password !== confirmPassword) {
+    alert('The password and confirm password fields do not match.');
+  } else if (!isChecked) {
+    alert('Please agree to the terms and conditions.');
+  } else {
+    sessionStorage.setItem('email', email);
+    sessionStorage.setItem('password', password);
+    // Redirect to the next page
+    // window.location.href = '/registration';
   }
-
-
+}  
+  
 
   return(
     <div>
@@ -90,7 +100,7 @@ export default function Registration()
           <h1 className="forget">Forget Password</h1>
         </div>
         <br></br>
-          <Link to='/registration'><input className="button1" type="submit" value={"CREATE ACCOUNT"} onClick={handleSubmit}/></Link>
+          <input className="button1" type="submit" value={"CREATE ACCOUNT"} onClick={handleSubmit}/>
           <h1 className="end2">Already have a account <a className="link"> Login here</a></h1>  
           
           </div>

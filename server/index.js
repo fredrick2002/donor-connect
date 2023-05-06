@@ -51,6 +51,15 @@ app.post("/api/submitReg",(req,res) =>{
    
 // });
 
+app.get("/api/emailVal", (req,res)=>{
+    const email = req.query.email
+
+    const sqlEmailVal="SELECT email FROM user_reg WHERE email=?"
+    db.query(sqlEmailVal,[email], (err,result)=>{
+        console.log(result);
+    });
+})
+
 app.listen(3001, () =>{
     console.log("running on port 3001");
 });
