@@ -8,7 +8,7 @@ export default function Registration()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [Agree, setAgree] = useState('');
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ export default function Registration()
     else if (password !== confirmPassword) {
       alert('The password and confirm password fields do not match.');
     } 
-    else if (Agree === 0){
+    else if (!isChecked){
       alert('Agree the Terms and Condition')
     }else {
       sessionStorage.setItem('email', email);
@@ -79,12 +79,12 @@ export default function Registration()
           /></label>
           <br></br>
           <label>
-            <input className="check" type="checkbox" 
-            onChange={(e)=>
-              {
-                  setAgree(e.target.value);
-              }
-            }/>
+           <input
+                className="check"
+                type="checkbox"
+                checked={isChecked}
+                onChange={(e) => setIsChecked(e.target.checked)}
+          />
             I agree to the <a className="link">Terms and conditions</a>
           </label>
           <h1 className="forget">Forget Password</h1>
