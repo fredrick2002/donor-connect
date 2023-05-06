@@ -5,7 +5,7 @@ export default function Welcome(){
 return(
   <div className="main1">
     <div className="image">
-      <img  src="./public/donorconnect.jpg"  alt="background" />
+      <img src="/src/assets/donorconnect.jpg"  alt="background" />
       </div>
     <div ><h1 className="header">Donor Connect</h1>
     <h1 className="descri">Connect with us and lets save a life together</h1>
