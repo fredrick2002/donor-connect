@@ -193,7 +193,7 @@ function RegForm() {
                     <div>
                     <input 
                         type="text" 
-                        className='regform-city-option'
+                        className='regform-city'
                         onChange={(e)=>
                         {
                             setCity(e.target.value);

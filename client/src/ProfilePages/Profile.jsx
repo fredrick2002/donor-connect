@@ -16,9 +16,14 @@ function Profile() {
     const [email,setEmail] = useState("");
     const [gender,setGender] = useState("");
     const [bloodgrp,setBloodgrp] = useState("");
+
+//    const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setId(sessionStorage.getItem('idUser') || '');
+  }, []);
     
     useEffect(() => {
-        setId(sessionStorage.getItem('idUser') || '');
         Axios.get(`http://localhost:3001/api/profile?idUser=${idUser}`).then((response) => {
             const dobObj = new Date(response.data[0].dob);
             const dobString = dobObj.toLocaleDateString();

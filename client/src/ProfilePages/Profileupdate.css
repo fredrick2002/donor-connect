@@ -100,6 +100,9 @@ img{
 input{
     color:rgba(220, 0, 0, 0.84);
 }
+select{
+    color: rgba(220, 0, 0, 0.84);
+}
 
 .regform-p{
     font-family: 'Poppins';

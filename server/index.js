@@ -21,19 +21,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 //User Registration Form
 app.post("/api/submitReg",(req,res) =>{
     
-    const first_name = req.body.first_name
-    const last_name = req.body.last_name
-    const dob = req.body.dob
-    const ph_no = req.body.ph_no
-    const email = req.body.email
-    const flat_no = req.body.flat_no
-    const area = req.body.area
-    const pincode = req.body.pincode
-    const gender = req.body.gender
-    const bloodgrp = req.body.bloodgrp
-    const city = req.body.city
-    const state = req.body.state
-    const donate_blood = req.body.donate_blood
+    const first_name = req.body.first_name;
+    const last_name = req.body.last_name;
+    const dob = req.body.dob;
+    const ph_no = req.body.ph_no;
+    const email = req.body.email;
+    const flat_no = req.body.flat_no;
+    const area = req.body.area;
+    const pincode = req.body.pincode;
+    const gender = req.body.gender;
+    const bloodgrp = req.body.bloodgrp;
+    const city = req.body.city;
+    const state = req.body.state;
+    const donate_blood = req.body.donate_blood;
     const password = req.body.password;
 
     
@@ -75,7 +75,7 @@ app.post("/api/loginVal", (req,res)=>{
 //For Profile Data View
 app.get("/api/profile",(req,res)=>{
     const idUser = req.query.idUser;
-    const sqlProfile=`SELECT first_name,last_name,dob,ph_no,email,gender,blood_grp FROM user_reg WHERE idUser_reg=?`
+    const sqlProfile=`SELECT * FROM user_reg WHERE idUser_reg=?`
     db.query(sqlProfile,[idUser], (err, results) => {
         if (err) {
             console.log(err);
@@ -83,7 +83,30 @@ app.get("/api/profile",(req,res)=>{
         } else {
             res.json(results);
         }
-        console.log(results);
+        // console.log(results);
+    });
+})
+
+//For Update User Details
+app.post("/api/updateProfile",(req,res) =>{
+    const idUser=req.body.idUser;
+    const first_name = req.body.first_name;
+    const last_name = req.body.last_name;
+    const dob = req.body.dob;
+    const ph_no = req.body.ph_no;
+    const email = req.body.email;
+    const flat_no = req.body.flat_no;
+    const area = req.body.area;
+    const pincode = req.body.pincode;
+    const gender = req.body.gender;
+    const bloodgrp = req.body.bloodgrp;
+    const city = req.body.city;
+    const state = req.body.state;
+
+    console.log(req);
+    const sqlRegUpdate= `UPDATE user_reg SET first_name = ?,last_name = ?,dob= ?,ph_no= ?,email= ?,flat_no= ?,area= ?,pincode= ?,gender= ?,blood_grp= ?,city= ?,state= ? WHERE idUser_reg='${idUser}'`;
+    db.query(sqlRegUpdate,[first_name,last_name,dob,ph_no,email,flat_no,area,pincode,gender,bloodgrp,city,state], (err,result)=>{
+        console.log(result);
     });
 })
 
