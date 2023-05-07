@@ -6,28 +6,24 @@ import Axios from 'axios';
 export default function Welcome(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [idUser,setIdUser] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     Axios.post("http://localhost:3001/api/loginVal", { email, password })
     .then((response) => {
-        const idUser_reg = response.data[0].idUser_reg
-        setIdUser(idUser_reg);
+        const idUser_reg = response.data[0].idUser_reg;
+        console.log(idUser_reg);
+        if(idUser_reg === ''){
+          alert("The Email and Password Doesn't Match");
+        }else{
+          sessionStorage.setItem('idUser', idUser_reg);
+          window.location.href = '/Profile';
+        }
         // handle response here and redirect user to appropriate page
       }).catch((error) => {
         console.log(error);
         // handle error here
       });
-      if(idUser === ''){
-        alert("The Email and Password Doesn't Match");
-      }else{
-        sessionStorage.setItem('idUser', idUser);
-        window.location.href = '/Profile';
-      }
-     
-      console.log(idUser);
-      
   };
 
 return(
