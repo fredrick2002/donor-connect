@@ -18,12 +18,12 @@ export default function Registration()
     e.preventDefault();
 
     Axios.get(`http://localhost:3001/api/emailVal?email=${email}`).then((response) => {
-      const { email: isEmailCheck } = response.data;
-    setEmailCheck(isEmailCheck);
-    console.log(response);
+      const emailCheck =  response.data[0].email;
+  setEmailCheck(emailCheck);
+    console.log(emailCheck);
     })
 
-  if (isEmailCheck === true) {
+  if (isEmailCheck === email) {
     alert('This email has already been used');
   } else if (email === '' || password === '' || confirmPassword === '') {
     alert('Please fill in all the mandatory fields.');
@@ -35,7 +35,7 @@ export default function Registration()
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('password', password);
     // Redirect to the next page
-    // window.location.href = '/registration';
+    window.location.href = '/registration';
   }
 }  
   

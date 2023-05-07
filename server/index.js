@@ -18,6 +18,7 @@ app.use(express.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+//User Registration Form
 app.post("/api/submitReg",(req,res) =>{
     
     const first_name = req.body.first_name
@@ -43,20 +44,31 @@ app.post("/api/submitReg",(req,res) =>{
 })
 
 
-// app.get("/", (req,res) =>{
-//     const sqlInsert = "INSERT INTO user_login (iduser_login,user_name) VALUES ('1','Fred');"
-//     db.query(sqlInsert, (err, result) => {
-//         res.send("hello")
-//     })
-   
-// });
 
+//Email Validation
 app.get("/api/emailVal", (req,res)=>{
     const email = req.query.email
 
     const sqlEmailVal="SELECT email FROM user_reg WHERE email=?"
     db.query(sqlEmailVal,[email], (err,result)=>{
         console.log(result);
+        res.json(result);
+    });
+})
+
+//Login Validation
+app.post("/api/loginVal", (req,res)=>{
+    const { email, password } = req.body;
+    console.log(req.body);
+    const sqlLogin = `SELECT idUser_reg FROM user_reg WHERE email = '${email}' AND password = '${password}'`;
+    db.query(sqlLogin, (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            res.json(results);
+        }
+        console.log(results);
     });
 })
 
