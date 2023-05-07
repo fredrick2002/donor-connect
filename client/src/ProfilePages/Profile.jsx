@@ -3,8 +3,36 @@ import Navbar from './NavbarProfile'
 import Footer from '../RegistrationForm/Footer'
 import img from '../assets/profile.jpg'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import Axios from 'axios'
 
 function Profile() {
+
+    const [idUser,setId] = useState('');  
+    const [first_name,setFirstName] = useState('');
+    const [last_name,setLastName] = useState('');
+    const [dob,setDob] = useState("");
+    const [ph_no,setPhoneNumber] = useState("");
+    const [email,setEmail] = useState("");
+    const [gender,setGender] = useState("");
+    const [bloodgrp,setBloodgrp] = useState("");
+    
+    useEffect(() => {
+        setId(sessionStorage.getItem('idUser') || '');
+        Axios.get(`http://localhost:3001/api/profile?idUser=${idUser}`).then((response) => {
+            const dobObj = new Date(response.data[0].dob);
+            const dobString = dobObj.toLocaleDateString();
+            setFirstName(response.data[0].first_name);
+            setLastName(response.data[0].last_name);
+            setDob(dobString);
+            setPhoneNumber(response.data[0].ph_no);
+            setEmail(response.data[0].email);
+            setGender(response.data[0].gender);
+            setBloodgrp(response.data[0].blood_grp);
+            console.log(response.data);
+    })
+      },[idUser]);
+    
     return(
         <div>
 
@@ -38,12 +66,12 @@ function Profile() {
                     <p className='profile-col2-des'>Thank you for the <span className='profile-col2-num'>10</span> lives you saved</p>
                     <hr/>
                     <p className='profile-col2-title'>Your Details</p>       
-                    <p className='profile-col2-details'>Name:</p>
-                    <p className='profile-col2-details'>Blood Group:</p>
-                    <p className='profile-col2-details'>Gender:</p>
-                    <p className='profile-col2-details'>Date of Birth:</p>
-                    <p className='profile-col2-details'>Phone Number:</p>
-                    <p className='profile-col2-details'>Email Address:</p>
+                    <p className='profile-col2-details'>Name: {first_name} {last_name}</p>
+                    <p className='profile-col2-details'>Blood Group: {bloodgrp}</p>
+                    <p className='profile-col2-details'>Gender:{gender}</p>
+                    <p className='profile-col2-details'>Date of Birth:{dob}</p>
+                    <p className='profile-col2-details'>Phone Number:{ph_no}</p>
+                    <p className='profile-col2-details'>Email Address:{email}</p>
                 </div>
                 
             </div>

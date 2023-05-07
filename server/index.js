@@ -72,6 +72,21 @@ app.post("/api/loginVal", (req,res)=>{
     });
 })
 
+//For Profile Data View
+app.get("/api/profile",(req,res)=>{
+    const idUser = req.query.idUser;
+    const sqlProfile=`SELECT first_name,last_name,dob,ph_no,email,gender,blood_grp FROM user_reg WHERE idUser_reg=?`
+    db.query(sqlProfile,[idUser], (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            res.json(results);
+        }
+        console.log(results);
+    });
+})
+
 app.listen(3001, () =>{
     console.log("running on port 3001");
 });

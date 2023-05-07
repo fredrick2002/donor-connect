@@ -12,8 +12,7 @@ export default function Welcome(){
     event.preventDefault();
     Axios.post("http://localhost:3001/api/loginVal", { email, password })
     .then((response) => {
-       
-        const {idUser_reg: idUser_reg} = response.data
+        const idUser_reg = response.data[0].idUser_reg
         setIdUser(idUser_reg);
         // handle response here and redirect user to appropriate page
       }).catch((error) => {
@@ -23,8 +22,10 @@ export default function Welcome(){
       if(idUser === ''){
         alert("The Email and Password Doesn't Match");
       }else{
+        sessionStorage.setItem('idUser', idUser);
         window.location.href = '/Profile';
       }
+     
       console.log(idUser);
       
   };
