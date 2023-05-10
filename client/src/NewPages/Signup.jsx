@@ -70,7 +70,7 @@ export default function Registration()
             required
           /></label>
           <h1 className="title" >Password</h1>
-          <label><input className="input" type="text" placeholder="Enter your Password here"
+          <label><input className="input" type="password" placeholder="Enter your Password here"
           onChange={(e)=>
             {
                 setPassword(e.target.value);
@@ -79,7 +79,7 @@ export default function Registration()
           required
           /></label>
           <h1 className="title" >Confirm Password</h1>
-          <label><input className="input" type="text" placeholder="Enter your Password here"
+          <label><input className="input" type="password" placeholder="Enter your Password here"
           onChange={(e)=>
             {
                 setConfirmPassword(e.target.value);

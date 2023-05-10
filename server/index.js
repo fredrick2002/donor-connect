@@ -17,6 +17,33 @@ app.use(cors());
 app.use(express.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+//Hospital Registration
+app.post("/api/hSubmitReg/",(req,res) =>{
+    
+    const hospi_id = req.body.hospi_id;
+    const hospi_name = req.body.hospi_name;
+    const email = req.body.email;
+    const hospi_addr = req.body.hospi_addr;
+    const hospi_area = req.body.hospi_area;
+    const pincode = req.body.pincode;
+    const city = req.body.city;
+    const state = req.body.state;
+    const isi_code = req.body.isi_code;
+    const ph_no = req.body.ph_no;
+    const password = req.body.password;
+    
+    
+    const sqlHRegInsert = "INSERT INTO hospi_reg(`hospi_id`, `hospi_name`, `email`, `hospi_addr`, `hospi_area`, `pincode`, `city`, `state`, `isi_code`, `ph_no`, `password`)VALUES(?,?,?,?,?,?,?,?,?,?,?);";
+    db.query(sqlHRegInsert,[hospi_id,hospi_name,email,hospi_addr,hospi_area,pincode,city,state,isi_code,ph_no,password], (err,result)=>{
+        console.log(err);
+        // console.log(hospi_id);
+        // console.log(password);
+        // res.send("Hello");
+        // console.log(result);
+    });
+})
 
 //User Registration Form
 app.post("/api/submitReg",(req,res) =>{
@@ -42,6 +69,8 @@ app.post("/api/submitReg",(req,res) =>{
         console.log(result);
     });
 })
+
+
 
 
 
@@ -109,6 +138,19 @@ app.post("/api/updateProfile",(req,res) =>{
         console.log(result);
     });
 })
+
+
+//Hospital ID Validation
+app.get("/api/hospiVal", (req,res)=>{
+    const hospi_id = req.query.hospi_id
+
+    const sqlHospiVal="SELECT hospi_id FROM hospi_reg WHERE hospi_id=?"
+    db.query(sqlHospiVal,[hospi_id], (err,result)=>{
+        console.log(result);
+        res.json(result);
+    });
+})
+
 
 app.listen(3001, () =>{
     console.log("running on port 3001");

@@ -1,0 +1,116 @@
+.profile{
+    height: 650px;
+    display: flex;
+}
+
+.profile-col1{
+    align-items: center;
+    margin-left: 70px;
+    margin-top: 48px;
+}
+
+.profile-inner-col{
+    display: flex;
+    margin-bottom: 24px;
+}
+
+img{
+    width: 72px;
+    height: 72px;
+}
+
+.profile-col1-name{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: rgba(207, 10, 10, 0.75);
+}
+
+.profile-col1-bloodgroup{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #757575;
+    }
+
+.profile-col1-link{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #757575;    
+    margin-top: 34px; 
+}
+
+
+.vertical-line {
+    border: 0.5px solid rgba(117, 117, 117, 0.4);
+    height: 650px;
+    margin-left: 80px;
+  }
+
+
+.profile-col2{
+    margin-left: 24px;
+    margin-top: 24px;
+}
+
+.profile-col2-head{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 49px;
+    /* identical to box height */
+
+
+    color: #DA2F47;
+}
+
+.profile-col2-num{
+    color: #E22929;
+}
+
+hr{
+    width: 950px;
+    border: 0.5px solid rgba(117, 117, 117, 0.4);
+}
+
+.profile-col2-des{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+
+    color: #5E5E5E;
+}
+
+.profile-col2-title{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+
+    color: #000000;
+}
+
+.profile-col2-details{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    margin-top: 32px;
+    letter-spacing: -0.01em;
+
+    color: #E22929;
+}
+

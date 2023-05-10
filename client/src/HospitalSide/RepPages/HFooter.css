@@ -1,0 +1,80 @@
+.footer{
+    background: #FFEDED;
+    margin-top: 20px;
+    height: 240px;
+}
+
+.footer-col{
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-col1{
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.footer-col2{
+    align-items: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.footer-col3{
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 0%;
+}
+
+.footer-link{
+    
+    width: 89px;
+    height: 30px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+  }
+
+h4{
+
+    /* savelife/secondary_title */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.footer-colortext{
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+
+    /* savelife/heading-color */
+
+    color: #CF0A0A;
+}
+
+h5{
+    margin-left: -50px;
+}

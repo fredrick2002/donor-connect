@@ -53,6 +53,8 @@ return(
       <br></br>
       <input className="button" type="submit" value={"LOGIN"} onClick={handleSubmit}/>
       <h1 className="end">Don’t have a account .! <Link to='/signup'>Create new account</Link></h1>  
+      <br/><br/>
+      <Link to='/hregister'><button>Hospital side</button></Link>
       
   </div>
     
