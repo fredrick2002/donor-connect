@@ -4,22 +4,14 @@
     width:900px;
 }
 
-input{
-    color:rgba(220, 0, 0, 0.84);
-}
-
 .regform-p{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
     line-height: 33px;
-    /* identical to box height */
-
     letter-spacing: -0.01em;
-
     color: #000000;
-
     margin-top: 10px;
     margin-bottom: 8px;
 }
@@ -28,6 +20,11 @@ input{
     margin-top: 10px;
     margin-bottom: 20px;
     background: #FFFFFF;
+    color: #000000;
+}
+
+select{
+    color:#000000;
 }
 
 .regform-col1{
@@ -49,11 +46,6 @@ input::placeholder{
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height */
-
-
-    /* savelife/secondary_gray */
-
     color: rgba(0, 0, 0, 0.63);
     padding: 8px 12px;
 }
@@ -64,23 +56,15 @@ input::placeholder{
 }
 
 .regform-name{
-    /* Frame 33 */
-
-
     box-sizing: border-box;
-
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 12px 8px;
     gap: 8px;
     margin-left: 2px;
-
     width: 408px;
     height: 48px;
-    
-
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
@@ -88,22 +72,16 @@ input::placeholder{
 
 .regform-date{
     box-sizing: border-box;
-
-    /* Auto layout */
-
     justify-content: space-between;
     align-items: center;
     padding: 12px 8px;
     gap: 8px;
-
     width: 372px;
     height: 53px;
-
     background: #FFFFFF;
-    /* s1 */
-
-border: 1px solid rgba(0, 0, 0, 0.3);
-border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: #000000;
+    border-radius: 4px;
 }
 
 input[type="date"]::placeholder {
@@ -114,14 +92,11 @@ input[type="date"]::placeholder {
 
 .regform-number{
     box-sizing: border-box;
-
     align-items: flex-start;
     padding: 12px 8px;
     gap: 8px;
-
     width: 384px;
     height: 48px;
-
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
@@ -129,14 +104,11 @@ input[type="date"]::placeholder {
 
 .regform-email{
     box-sizing: border-box;
-
     align-items: flex-start;
     padding: 12px 8px;
     gap: 8px;
-
     width: 384px;
     height: 48px;
-
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
@@ -146,10 +118,7 @@ input[type="date"]::placeholder {
 .regform-addr{
     width: 864px;
     height: 48px;
-
     background: #FFFFFF;
-    /* s1 */
-
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
@@ -157,13 +126,9 @@ input[type="date"]::placeholder {
 .regform-pincode{
     padding: 12px 8px;
     gap: 8px;
-
     width: 864px;
     height: 48px;
-
     background: #FFFFFF;
-    /* s1 */
-
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 
@@ -171,22 +136,15 @@ input[type="date"]::placeholder {
 
 .regform-gender{
     box-sizing: border-box;
-
-    /* Auto layout */
-
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     padding: 12px 8px;
     gap: 8px;
-
     width: 324px;
     height: 53px;
-
     background: #FFFFFF;
-    /* s1 */
-
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     font-family: 'Poppins', sans-serif;
@@ -206,31 +164,36 @@ input[type="date"]::placeholder {
     right: 34.98%;
     top: 41.67%;
     bottom: 39.17%;
-
-    /* savelife/button_color */
-
-    background: rgba(220, 0, 0, 0.84);
+    background: #FFFFFF;
   }
 
-  .regform-bloodgrp{
-        
+.regform-bloodgrp{
     box-sizing: border-box;
-
-    /* Auto layout */
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     padding: 12px 8px;
     gap: 8px;
-
     width: 324px;
     height: 53px;
-
     background: #FFFFFF;
-    /* s1 */
-
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    background-image: '../assets/arrow-down.svg';
+}
 
+.regform-bloodgrp::after {
+    content: '\e5c5';
+    font-family: 'Arrow Drop Down';
+    font-size: 20px;
+    position: absolute;
+    left: 34.98%;
+    right: 34.98%;
+    top: 41.67%;
+    bottom: 39.17%;
+    background: #FFFFFF;
   }
 
 .regform-col2-bloodgrp{
@@ -242,24 +205,23 @@ input[type="date"]::placeholder {
     color: #000000;
 }
 
+.regform-bloodgrp option:checked {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.63);
+}
+  
+
 .regform-city{
     box-sizing: border-box;
-
-    /* Auto layout */
-
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     padding: 12px 8px;
     gap: 8px;
-
     width: 374px;
     height: 53px;
-
     background: #FFFFFF;
-    /* s1 */
-
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
@@ -270,22 +232,15 @@ input[type="date"]::placeholder {
 
 .regform-state{
     box-sizing: border-box;
-
-    /* Auto layout */
-
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     padding: 12px 8px;
     gap: 8px;
-
     width: 374px;
     height: 53px;
-
     background: #FFFFFF;
-    /* s1 */
-
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
@@ -295,8 +250,9 @@ input[type="date"]::placeholder {
 }
 
 .round-checkbox-container {
-    display: inline-block;
     margin-right: 20px;
+    align-items: center;
+    margin-bottom: 4px;
   }
   
   .round-checkbox-container label {
@@ -308,12 +264,11 @@ input[type="date"]::placeholder {
   }
   
   .round-checkbox-container span {
-    display: inline-block;
     width: 20px;
     height: 20px;
     margin-right: 5px;
     border-radius: 50%;
-    border: 2px solid #000000;
+    border: 2px solid #000;
     vertical-align: middle;
     position: relative;
     top: 5px;
@@ -346,11 +301,15 @@ input[type="date"]::placeholder {
     align-items: center;
     padding: 11px 8px;
     gap: 8px;
-
+    border:none;
     width: 864px;
     height: 64px;
-
     background: #E22929;
     border-radius: 8px;
-
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 42px;
+    color: #FFFFFF;
 }

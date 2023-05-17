@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.img1{
+    margin-top: 50px;
+    width:750px;
+    height:500px;
+    position: absolute;
+    margin-left: 80px;
+}
+.H_detial_header1{
+    margin-left: 1130px;
+    color: #DA2F47;
+    font-size:74px;
+    padding-top: 70px;
+    font-weight: 600;
+}
+.H_detial_des1{
+    padding-left: 1150px;
+    padding-top: 80px ;
+    font-size: 28px;
+    padding-right: 250px;
+    font-family: 'Noto Sans';
+    font-style: italic;
+}
+
+.header2{
+    padding-top: 80px;
+    color: #DA2F47;
+    margin-left: 84px;
+    font-size: 50px;
+    margin-top: 200px;
+}
+.des2{
+    padding-top: 10px;
+    height: 10px;
+    font-style: normal;
+    font-weight: 300;
+    font-size:22px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Inter, 'Poppins';
+    margin-left: 84px;
+    width:900px;
+}
+.img2{
+    position: absolute;
+    margin-left: 1150px;
+    width: 500px;
+    height: 500px;
+}
+.button1{
+    background: rgba(220, 0, 0, 0.84);
+    border-radius: 8px;
+    width: 250px;
+    height: 50px;
+    margin-left: 50px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    position: absolute;
+    border: none;
+}
+.land{
+    background-image: url(public/image/nordwood-themes-R53t-Tg6J4c-unsplash.jpg);
+    height: 970px;
+}
+
+.button2{
+    background: rgba(220, 0, 0, 0.84);
+    border-radius: 8px;
+    width: 250px;
+    height: 50px;
+    margin-left: 400px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    position: absolute;
+    border: none;
+}
+.button3{
+    background: rgba(220, 0, 0, 0.84);
+    border-radius: 8px;
+    width: 250px;
+    height: 50px;
+    margin-left: 50px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 140px;
+    margin-bottom: 30px;
+    border: none;
+}
+.button4{
+    background: rgba(220, 0, 0, 0.84);
+    border-radius: 8px;
+    width: 250px;
+    height: 50px;
+    margin-left: 100px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 140px;
+    margin-bottom: 30px;
+    border: none;
+}

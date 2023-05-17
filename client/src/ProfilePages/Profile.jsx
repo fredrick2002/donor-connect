@@ -55,12 +55,14 @@ function Profile() {
                     </div>
 
                     <div>
-                        <p className='profile-col1-link'><Link to='/profile/update'>Edit your details</Link></p>
-                        <p className='profile-col1-link'>Your History</p>
-                        <p className='profile-col1-link'>Unsubscribe from all</p>
+                        <p className='profile-col1-link'><Link to='/profile/update' className='link-color-profile'>Edit your details</Link></p>
+                        <p className='profile-col1-link'><Link to='/profile/history' className='link-color-profile'>Your History</Link></p>
+                        <p className='profile-col1-link'>Unsubscribe from all</p>  {//Should remove all the given notify me
+                        }
                         <p className='profile-col1-link'>About us</p>
-                        <p className='profile-col1-link'>Log out</p>
+                        <p className='profile-col1-link'><Link to='/' className='link-color-profile'>Log out</Link></p> 
                     </div>
+
 
                 </div>
 

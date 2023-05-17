@@ -26,7 +26,7 @@ img{
     font-size: 24px;
     line-height: 36px;
 
-    color: rgba(207, 10, 10, 0.75);
+    color: black;
 }
 
 .profileup-col1-bloodgroup{
@@ -98,10 +98,7 @@ img{
 }
 
 input{
-    color:rgba(220, 0, 0, 0.84);
-}
-select{
-    color: rgba(220, 0, 0, 0.84);
+    color:black;
 }
 
 .regform-p{
@@ -305,7 +302,7 @@ input[type="date"]::placeholder {
 
     /* savelife/button_color */
 
-    background: rgba(220, 0, 0, 0.84);
+    /* background: rgba(220, 0, 0, 0.84); */
   }
 
   .regform-bloodgrp{
@@ -458,4 +455,8 @@ input[type="date"]::placeholder {
     font-size: 28px;
     line-height: 42px;
     color: #FFFFFF;
+}
+
+.link-color-profile{
+    color: #757575;
 }

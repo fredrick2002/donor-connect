@@ -123,10 +123,13 @@ const submitHReg = (e) => {
         password: password
 
         // console.log(hospi_id);
-    }).then(()=>{
-        console.log("Insert Successfully")
-        window.location.href = '/hprofile'
-    })
+        }).then(()=>{
+        console.log("Insert Successfully");
+    }).catch((error) => {
+        // Error callback function
+        console.log(error);
+    });
+    window.location.href = '/hprofile';
         }
     }
     })

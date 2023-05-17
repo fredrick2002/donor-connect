@@ -1,5 +1,9 @@
 
 import './Footer.css'
+import instagram from '../assets/instagram.svg'
+import twitter from '../assets/twitter.svg'
+import facebook from '../assets/facebook.svg'
+import whatsapp from '../assets/whatsapp.svg'
 
 function Footer() {
 
@@ -9,7 +13,7 @@ function Footer() {
         <footer className='footer'>
             <div className='footer-col'>
                 <div className='footer-col1'>
-                    <h4>DONNOR CONNECT</h4>
+                    <h4>DONOR CONNECT</h4>
                     <ul className='list-unstyled'>
                         <li>
                             <a href='#!' className='footer-link'>About us</a>
@@ -53,12 +57,17 @@ function Footer() {
             </div>  
             <div className='footer-col'>
                 <div className='footer-col1'>
-                    <p className='footer-colortext'>DONNOR CONNECT</p>
+                    <p className='footer-colortext'>DONOR CONNECT</p>
                 </div>
                 <div className='footer-col2'>
-                    <h5>&copy; {today.getFullYear()} DONNOR CONNECT</h5>
+                    <h5>&copy; {today.getFullYear()} DONOR CONNECT</h5>
                 </div>
-                <div className='footer-col3'></div>
+                <div className='footer-col3'>
+                    <img src = {whatsapp} className='footer-img' />
+                    <img src = {instagram} className='footer-img' />
+                    <img src = {twitter} className='footer-img' />
+                    <img src = {facebook} className='footer-img' />
+                </div>
             </div> 
         </footer>
     );

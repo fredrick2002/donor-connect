@@ -4,7 +4,7 @@ import "./HNavbar.css"
 function HNavbar() {
     return(
         <div className="navbar">
-            <div className="navbar-title">DONNOR CONNECT</div>
+            <div className="navbar-title">DONOR CONNECT</div>
         </div>
     );
 }

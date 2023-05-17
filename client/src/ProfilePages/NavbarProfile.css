@@ -12,12 +12,15 @@
 }
 
 .navbar-title{
-    color:#CF0A0A;
     font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
     line-height: 38px;
+
+    /* savelife/heading-color */
+
+color: #CF0A0A;
 }
 
 .navbar-faq{
@@ -31,6 +34,11 @@
     right:0%;
     margin-right: 0px;
     left:90%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
     color: #000000;
 }
 
@@ -40,4 +48,27 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+/* img{
+    position: absolute;
+} */
+
+
+.navbar-faq-img{
+    position: absolute;
+    fill:'red';
+    margin-left: 1330px;
+    margin-top: 10px;
+    Width:32px;
+    Height:42px;
+}
+
+.navbar-profile-img{
+    position: absolute;
+    fill:'red';
+    margin-left: 1800px;
+    margin-top: 10px;
+    Width:32px;
+    Height:42px;
 }

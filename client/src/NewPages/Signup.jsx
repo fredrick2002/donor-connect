@@ -1,5 +1,5 @@
 import "./Signup.css"
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import img from '../assets/donorconnect.jpg'
 import { useState } from 'react';
 import Axios from 'axios';
@@ -41,27 +41,18 @@ export default function Registration()
   
 
   return(
-    <div>
-
-      <div className="image1">
-          <img  src={img}  alt="background" />
-      </div>
-
+    <div className="signup">
       <main>
-        <div className="image1">
-          <img  src={img}  alt="background" />
-        </div>
-
-         <div>
-            <h1 className="header">Donor Connect</h1>
-            <h1 className="descri">Connect with us and lets save a life together</h1>
-            <h1 className="Create">CREATE NEW ACCOUNT </h1>
-
+        <div className="signup-form">
+         <form>
+            <h1 className="signup-header">Donor Connect</h1>
+            <h1 className="signup-tagline">Connect with us and lets save a life together</h1>
+            <h1 className="signup-Create">CREATE NEW ACCOUNT </h1>
         <div className="space">
           {/* <h1 className="title">Name</h1>
           <label><input className="input" type="text" placeholder="enter your name here" /></label> */}
-          <h1 className="title">Email</h1>
-          <label><input className="input" type="text" placeholder="Enter your Email address here" 
+          <h1 className="signup-title">Email</h1>
+          <label><input className="signup-input" type="text" placeholder="Enter your Email address here" 
             onChange={(e)=>
               {
                   setEmail(e.target.value);
@@ -69,8 +60,8 @@ export default function Registration()
             }
             required
           /></label>
-          <h1 className="title" >Password</h1>
-          <label><input className="input" type="password" placeholder="Enter your Password here"
+          <h1 className="signup-title" >Password</h1>
+          <label><input className="signup-input" type="password" placeholder="Enter your Password here"
           onChange={(e)=>
             {
                 setPassword(e.target.value);
@@ -78,8 +69,8 @@ export default function Registration()
           }
           required
           /></label>
-          <h1 className="title" >Confirm Password</h1>
-          <label><input className="input" type="password" placeholder="Enter your Password here"
+          <h1 className="signup-title" >Confirm Password</h1>
+          <label><input className="signup-input" type="password" placeholder="Enter your Password here"
           onChange={(e)=>
             {
                 setConfirmPassword(e.target.value);
@@ -88,23 +79,24 @@ export default function Registration()
           required
           /></label>
           <br></br>
-          <label>
+          <label className="signup-tc">
            <input
-                className="check"
+                className="signup-check"
                 type="checkbox"
                 checked={isChecked}
                 onChange={(e) => setIsChecked(e.target.checked)}
           />
             I agree to the <a className="link">Terms and conditions</a>
           </label>
-          <h1 className="forget">Forget Password</h1>
         </div>
-        <br></br>
-          <input className="button1" type="submit" value={"CREATE ACCOUNT"} onClick={handleSubmit}/>
-          <h1 className="end2">Already have a account <a className="link"> Login here</a></h1>  
-          
-          </div>
+          <input className="signup-button1" type="submit" value={"CREATE ACCOUNT"} onClick={handleSubmit}/>
+          <h1 className="signup-end2">Already have a account <Link to='/login'><a className="link"> Login here</a></Link></h1>
+          </form>  
+        </div>
       </main>
+      <div className="signup-image1">
+          <img  src={img} className="signup-img" alt="background" />
+      </div>
     </div>
         
        

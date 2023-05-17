@@ -65,3 +65,34 @@
     padding-top: 7px;
 
 }
+
+img{
+    position: absolute;
+}
+
+.navbar-location-img{
+    position: absolute;
+    fill:'red';
+    margin-left: 430px;
+    margin-top: 10px;
+    Width:32px;
+    Height:42px;
+}
+
+.navbar-faq-img{
+    position: absolute;
+    fill:'red';
+    margin-left: 1550px;
+    margin-top: 10px;
+    Width:32px;
+    Height:42px;
+}
+
+.navbar-profile-img{
+    position: absolute;
+    fill:'red';
+    margin-left: 1800px;
+    margin-top: 10px;
+    Width:32px;
+    Height:42px;
+}

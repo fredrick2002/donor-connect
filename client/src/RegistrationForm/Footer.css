@@ -1,7 +1,8 @@
 .footer{
     background: #FFEDED;
     margin-top: 20px;
-    height: 240px;
+    /* height: 770px; */
+    height : 790px;
 }
 
 .footer-col{
@@ -37,9 +38,6 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-    /* identical to box height */
-
-
     color: #000000;
 }
 
@@ -48,33 +46,29 @@ a {
   }
 
 h4{
-
-    /* savelife/secondary_title */
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
-    /* identical to box height */
-
-
     color: #000000;
 }
 
 .footer-colortext{
-
     font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
     line-height: 38px;
-
-    /* savelife/heading-color */
-
     color: #CF0A0A;
 }
 
 h5{
     margin-left: -50px;
+}
+
+.footer-img{
+    height: 32px;
+    margin-right: 32px;
+    margin-bottom: 0px;
 }

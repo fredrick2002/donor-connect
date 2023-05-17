@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
+// const nodemailer = require('nodemailer');
 
 
 const db = mysql.createPool({
@@ -37,7 +38,7 @@ app.post("/api/hSubmitReg/",(req,res) =>{
     
     const sqlHRegInsert = "INSERT INTO hospi_reg(`hospi_id`, `hospi_name`, `email`, `hospi_addr`, `hospi_area`, `pincode`, `city`, `state`, `isi_code`, `ph_no`, `password`)VALUES(?,?,?,?,?,?,?,?,?,?,?);";
     db.query(sqlHRegInsert,[hospi_id,hospi_name,email,hospi_addr,hospi_area,pincode,city,state,isi_code,ph_no,password], (err,result)=>{
-        console.log(err);
+        console.log(result);
         // console.log(hospi_id);
         // console.log(password);
         // res.send("Hello");
@@ -66,7 +67,7 @@ app.post("/api/submitReg",(req,res) =>{
     
     const sqlRegInsert= "INSERT INTO user_reg(`first_name`,`last_name`,`dob`,`ph_no`,`email`,`flat_no`,`area`,`pincode`,`gender`,`blood_grp`,`city`,`state`,`donate_blood`,`password`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     db.query(sqlRegInsert,[first_name,last_name,dob,ph_no,email,flat_no,area,pincode,gender,bloodgrp,city,state,donate_blood,password], (err,result)=>{
-        console.log(result);
+        console.log(err);
     });
 })
 
@@ -90,6 +91,21 @@ app.post("/api/loginVal", (req,res)=>{
     const { email, password } = req.body;
     console.log(req.body);
     const sqlLogin = `SELECT idUser_reg FROM user_reg WHERE email = '${email}' AND password = '${password}'`;
+    db.query(sqlLogin, (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            res.json(results);
+        }
+        console.log(results);
+    });
+})
+
+app.post("/api/hloginVal", (req,res)=>{
+    const { email, password } = req.body;
+    console.log(req.body);
+    const sqlLogin = `SELECT hospi_id FROM hospi_reg WHERE email = '${email}' AND password = '${password}'`;
     db.query(sqlLogin, (err, results) => {
         if (err) {
             console.log(err);
@@ -146,10 +162,12 @@ app.get("/api/hospiVal", (req,res)=>{
 
     const sqlHospiVal="SELECT hospi_id FROM hospi_reg WHERE hospi_id=?"
     db.query(sqlHospiVal,[hospi_id], (err,result)=>{
-        console.log(result);
+        // console.log(result);
         res.json(result);
     });
 })
+
+
 
 
 app.listen(3001, () =>{

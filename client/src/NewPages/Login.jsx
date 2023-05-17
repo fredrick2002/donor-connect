@@ -1,4 +1,5 @@
 import './login.css'
+import img from '../assets/donorconnect.jpg'
 import {Link} from 'react-router-dom'
 import { useState } from 'react';
 import Axios from 'axios';
@@ -28,34 +29,41 @@ export default function Welcome(){
 
 return(
   <div className="main1">
-    <div className="image">
-      <img src="/src/assets/donorconnect.jpg"  alt="background" />
-      </div>
-    <div ><h1 className="header">Donor Connect</h1>
-    <h1 className="descri">Connect with us and lets save a life together</h1>
-    <h1 className="login">Login</h1>
+    <div className='login-form'>
+      <div>
+      <h1 className="login-header">Donor Connect</h1>
+    <h1 className="login-descri">Connect with us and lets save a life together</h1>
+    <h1 className="login-title">Login</h1>
 
     <h1 className="title">Email</h1>
-    <label><input className="input" type="text" name={"mail"} placeholder="enter your email address here"
+    <label><input className="login-input" type="text" name={"mail"} placeholder="enter your email address here"
     onChange={(e) => setEmail(e.target.value)}
     /></label>
     <h1 className="title" >Password</h1>
-    <label><input className="input" type="text" name={"psw"} placeholder="enter your password here"
+    <label><input className="login-input" type="text" name={"psw"} placeholder="enter your password here"
     onChange={(e) => setPassword(e.target.value)}
     /></label>
     <br></br>
-      <label>
-        <input className="check"type="checkbox" />
-        Remember me
-      </label>
+    <div className='login-forgetpwd'>  
+          <label className='login-remMe'>
+            <input 
+              className="check"
+              type="checkbox" />
+              &nbsp;Remember me
+          </label>
       <h1 className="forget">Forget Password</h1>
       </div>
+      </div>
+      <input className="login-button" type="submit" value={"LOGIN"} onClick={handleSubmit}/>
       <br></br>
-      <input className="button" type="submit" value={"LOGIN"} onClick={handleSubmit}/>
       <h1 className="end">Don’t have a account .! <Link to='/signup'>Create new account</Link></h1>  
-      <br/><br/>
-      <Link to='/hregister'><button>Hospital side</button></Link>
+  </div>
+  <div className="image">
       
+      <img className='login-img' src={img}  alt="background" />
+    
+    </div>
+  
   </div>
     
 );

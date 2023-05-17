@@ -53,10 +53,10 @@ function HFooter() {
             </div>  
             <div className='footer-col'>
                 <div className='footer-col1'>
-                    <p className='footer-colortext'>DONNOR CONNECT</p>
+                    <p className='footer-colortext'>DONOR CONNECT</p>
                 </div>
                 <div className='footer-col2'>
-                    <h5>&copy; {today.getFullYear()} DONNOR CONNECT</h5>
+                    <h5>&copy; {today.getFullYear()} DONOR CONNECT</h5>
                 </div>
                 <div className='footer-col3'></div>
             </div> 
