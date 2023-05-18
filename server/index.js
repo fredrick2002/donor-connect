@@ -102,20 +102,6 @@ app.post("/api/loginVal", (req,res)=>{
     });
 })
 
-app.post("/api/hloginVal", (req,res)=>{
-    const { email, password } = req.body;
-    console.log(req.body);
-    const sqlLogin = `SELECT hospi_id FROM hospi_reg WHERE email = '${email}' AND password = '${password}'`;
-    db.query(sqlLogin, (err, results) => {
-        if (err) {
-            console.log(err);
-            res.status(500).json({ message: "Internal server error" });
-        } else {
-            res.json(results);
-        }
-        console.log(results);
-    });
-})
 
 //For Profile Data View
 app.get("/api/profile",(req,res)=>{
@@ -164,6 +150,50 @@ app.get("/api/hospiVal", (req,res)=>{
     db.query(sqlHospiVal,[hospi_id], (err,result)=>{
         // console.log(result);
         res.json(result);
+    });
+})
+
+//Hospital Login Validation
+app.post("/api/hloginVal", (req,res)=>{
+    const { hospi_id, password } = req.body;
+    console.log(req.body);
+    const sqlhLogin = `SELECT hospi_id FROM hospi_reg WHERE hospi_id ='${hospi_id}'AND password = '${password}'`;
+    db.query(sqlhLogin, (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            res.json(results);
+        }
+        console.log(results);
+    });
+})
+
+app.get("/api/hprofile",(req,res)=>{
+    const hospi_id = req.query.hospi_id;
+    const sqlhProfile=`SELECT * FROM hospi_reg WHERE hospi_id=?`
+    db.query(sqlhProfile,[hospi_id], (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            res.json(results);
+        }
+        // console.log(results);
+    });
+})
+
+app.post("/api/bloodReq",(req,res) =>{
+    
+    const hospi_id = req.body.hospi_id;
+    const req_date = req.body.req_date;
+    const blood_grp = req.body.blood_grp;
+
+    
+    const sqlReqInsert= "INSERT INTO blood_req(`hospi_id`,`req_date`,`blood_grp`)VALUES(?,?,?)";
+    db.query(sqlReqInsert,[hospi_id,req_date,blood_grp], (err,result)=>{
+        console.log(err);
+        // res.send(true);
     });
 })
 

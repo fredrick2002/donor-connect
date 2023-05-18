@@ -4,9 +4,26 @@ import img from '../assets/profile.jpg'
 
 import HNavbar from './RepPages/HNavbar';
 import HFooter from './RepPages/HFooter';
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
 
 function HProfile() 
 {
+    const [hospi_id,setHospiId] = useState('');
+    const [hospi_name,setHospiName] = useState('');
+
+    useEffect(() => {
+        setHospiId(sessionStorage.getItem('idhospi') || '');
+      }, []);
+
+      useEffect(() => {
+        Axios.get(`http://localhost:3001/api/hprofile?hospi_id=${hospi_id}`).then((response) => {
+            setHospiName(response.data[0].hospi_name);
+            sessionStorage.setItem('namehospi', hospi_name);
+            console.log(response.data);
+
+    })
+      },[hospi_id ,hospi_name]);
     return(
         <div>
             <HNavbar/>
@@ -16,7 +33,7 @@ function HProfile()
                     <div className='profile-inner-col'>
                         <img src={img} />
                         <div>
-                            <p className='profile-col1-name'>Paul Hospitals</p>
+                            <p className='profile-col1-name'>{hospi_name}</p>
                         </div>
                     </div>
 

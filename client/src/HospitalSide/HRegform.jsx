@@ -129,7 +129,7 @@ const submitHReg = (e) => {
         // Error callback function
         console.log(error);
     });
-    window.location.href = '/hprofile';
+    window.location.href = '/hlogin';
         }
     }
     })

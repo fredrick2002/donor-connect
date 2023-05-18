@@ -114,3 +114,123 @@ hr{
     color: #E22929;
 }
 
+.table-head{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+    
+}
+
+.table-head-h{
+    justify-content: center;
+    align-items: center;
+    padding: 8px 30px;
+    gap: 8px;
+
+    width: 230px;
+    height: 52px;
+    background: #E22929;
+}
+
+.table-sno{
+    justify-content: center;
+    align-items: center;
+    padding: 8px 30px;
+    gap: 8px;
+
+    width: 230px;
+    height: 52px;
+
+    background: #FFFBEB;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #E22929;
+
+}
+
+.table-bldgrp{
+
+    justify-content: center;
+    align-items: center;
+    padding: 8px 30px;
+    gap: 8px;
+
+    width: 230px;
+    height: 52px;
+
+    background: #FFFBEB;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    letter-spacing: -0.01em;
+
+    color: #454545;
+    }
+
+.table-timer{
+
+    justify-content: center;
+    align-items: center;
+    padding: 8px 30px;
+    gap: 8px;
+
+    width: 213.33px;
+    height: 52px;
+
+    background: #FFFBEB;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #E22929;
+}
+
+.table-delete{
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    gap: 8px;
+
+    width: 213.33px;
+    height: 52px;
+
+    background: #FFFBEB;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.table-btn{
+    align-items: center;
+    padding: 0px 24px;
+    gap: 4px;
+
+
+    width: 185px;
+    height: 42px;
+    margin-bottom: px;
+    border: none;
+
+    background: #E22929;
+    border-radius: 8px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    /* identical to box height */
+
+
+    color: #FFFBEB;
+}
