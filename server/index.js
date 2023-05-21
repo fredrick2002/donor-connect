@@ -183,6 +183,7 @@ app.get("/api/hprofile",(req,res)=>{
     });
 })
 
+//Posting Blood Request
 app.post("/api/bloodReq",(req,res) =>{
     
     const hospi_id = req.body.hospi_id;
@@ -197,6 +198,29 @@ app.post("/api/bloodReq",(req,res) =>{
     });
 })
 
+app.get("/api/hprofile_del",(req,res)=>{
+    const hospi_id = req.query.hospi_id;
+    const sqlhProfile=`SELECT * FROM blood_req WHERE hospi_id=?`
+    const sqlTimeDelete = `DELETE FROM blood_req WHERE req_date <= NOW();`
+    db.query(sqlhProfile,[hospi_id], (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            console.log(results);
+            res.json(results);
+        }
+        // console.log(results);
+    });
+    db.query(sqlTimeDelete, (err, deleteResults) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Rows deleted:", deleteResults.affectedRows);
+        }
+      });
+    
+})
 
 
 

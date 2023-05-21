@@ -261,7 +261,7 @@ const submitHReg = (e) => {
                         
                         <div className='regform-col2'>
                             <div >
-                                <p className='regform-p'>City</p>
+                                <p className='regform-p'>District</p>
                             </div>
                             
                             <div>
@@ -278,7 +278,6 @@ const submitHReg = (e) => {
                                 />
                             </div>
                         </div>
-
                         
                         <div className='regform-col2'>
                             <div className='right-col'>

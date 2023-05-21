@@ -18,7 +18,7 @@ export default function Welcome(){
           alert("The Email and Password Doesn't Match");
         }else{
           sessionStorage.setItem('idUser', idUser_reg);
-          window.location.href = '/Profile';
+          window.location.href = '/home';
         }
         // handle response here and redirect user to appropriate page
       }).catch((error) => {

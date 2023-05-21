@@ -18,7 +18,7 @@ function PostRequest ()
 
     useEffect(() => {
         setHospiId(sessionStorage.getItem('idhospi') || '');
-        // console.log(hospi_id);
+        console.log(hospi_id);
         setHospiName(sessionStorage.getItem('namehospi') || '');
       }, []);
 

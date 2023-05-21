@@ -11,19 +11,29 @@ function HProfile()
 {
     const [hospi_id,setHospiId] = useState('');
     const [hospi_name,setHospiName] = useState('');
+    const [responseData,setResData] = useState([]);
+    // const [datetimeString,setDatetimeString] = useState([]);
 
     useEffect(() => {
         setHospiId(sessionStorage.getItem('idhospi') || '');
+        console.log(hospi_id);
+        setHospiName(sessionStorage.getItem('namehospi') || '');
       }, []);
 
       useEffect(() => {
-        Axios.get(`http://localhost:3001/api/hprofile?hospi_id=${hospi_id}`).then((response) => {
-            setHospiName(response.data[0].hospi_name);
-            sessionStorage.setItem('namehospi', hospi_name);
+        const fetchRequestData = async () => {
+        Axios.get(`http://localhost:3001/api/hprofile_del?hospi_id=${hospi_id}`).then((response) => {
+            // setHospiName(response.data[0].hospi_name);
+            // sessionStorage.setItem('namehospi', hospi_name);
             console.log(response.data);
-
+            setResData(response.data);
     })
+    }
+    const interval = setInterval(fetchRequestData, 1000); // Fetch data every 1 seconds
+
+    return () => clearInterval(interval);
       },[hospi_id ,hospi_name]);
+
     return(
         <div>
             <HNavbar/>
@@ -57,26 +67,26 @@ function HProfile()
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>A positive (A+)</td>
-                                <td>08 : 25 : 04</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>A positive (A+)</td>
-                                <td>08 : 25 : 04</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>A positive (A+)</td>
-                                <td>08 : 25 : 04</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>A positive (A+)</td>
-                                <td>08 : 25 : 04</td>
-                            </tr>
+                        {responseData.map((item, index) => {
+                        const requestTime = new Date(item.req_date);
+                        const currentTime = new Date();
+                        const timeDiff = Math.floor((currentTime - requestTime) / 1000); // Time difference in seconds
+
+                        const hours = Math.floor(Math.abs(timeDiff) / 3600);
+                        const minutes = Math.floor((Math.abs(timeDiff) % 3600) / 60);
+                        const seconds = Math.abs(timeDiff) % 60;
+
+
+                        const formattedTime = `${hours} : ${minutes} : ${seconds}`;
+
+                        return (
+                        <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{item.blood_grp}</td>
+                        <td>{formattedTime}</td>
+                        </tr>
+                        );
+                    })}
                         </tbody>
 
                     </table>
