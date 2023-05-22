@@ -18,7 +18,8 @@ function HProfile()
         setHospiId(sessionStorage.getItem('idhospi') || '');
         console.log(hospi_id);
         setHospiName(sessionStorage.getItem('namehospi') || '');
-      }, []);
+        console.log(hospi_name);
+      }, [hospi_id,hospi_name]);
 
       useEffect(() => {
         const fetchRequestData = async () => {

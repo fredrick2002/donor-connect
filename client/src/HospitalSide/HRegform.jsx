@@ -263,19 +263,52 @@ const submitHReg = (e) => {
                             <div >
                                 <p className='regform-p'>District</p>
                             </div>
-                            
                             <div>
-                            <input 
-                        type="text" 
-                        id='city'
-                        name='city'
-                        className='regform-city'
-                        onChange={(e)=>
-                        {
-                            setCity(e.target.value);
-                            }
-                        }
-                                />
+                            <select id="districtDropdown"
+                            className='regform-state'
+                             onChange={(e)=>
+                                {
+                                    setCity(e.target.value);
+                                    }
+                                }
+                                     >
+                                <option value=""selected disabled></option>
+                                <option value="Ariyalur">Ariyalur</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Cuddalore">Cuddalore</option>
+                                <option value="Dharmapuri">Dharmapuri</option>
+                                <option value="Dindigul">Dindigul</option>
+                                <option value="Erode">Erode</option>
+                                <option value="Kallakurichi">Kallakurichi</option>
+                                <option value="Kancheepuram">Kancheepuram</option>
+                                <option value="Kanyakumari">Kanyakumari</option>
+                                <option value="Karur">Karur</option>
+                                <option value="Krishnagiri">Krishnagiri</option>
+                                <option value="Madurai">Madurai</option>
+                                <option value="Nagapattinam">Nagapattinam</option>
+                                <option value="Namakkal">Namakkal</option>
+                                <option value="Nilgiris">Nilgiris</option>
+                                <option value="Perambalur">Perambalur</option>
+                                <option value="Pudukkottai">Pudukkottai</option>
+                                <option value="Ramanathapuram">Ramanathapuram</option>
+                                <option value="Salem">Salem</option>
+                                <option value="Sivaganga">Sivaganga</option>
+                                <option value="Tenkasi">Tenkasi</option>
+                                <option value="Thanjavur">Thanjavur</option>
+                                <option value="Theni">Theni</option>
+                                <option value="Thiruvallur">Thiruvallur</option>
+                                <option value="Thiruvarur">Thiruvarur</option>
+                                <option value="Thoothukudi">Thoothukudi</option>
+                                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                                <option value="Tirunelveli">Tirunelveli</option>
+                                <option value="Tirupathur">Tirupathur</option>
+                                <option value="Tiruppur">Tiruppur</option>
+                                <option value="Tiruvannamalai">Tiruvannamalai</option>
+                                <option value="Vellore">Vellore</option>
+                                <option value="Viluppuram">Viluppuram</option>
+                                <option value="Virudhunagar">Virudhunagar</option>
+                            </select>
                             </div>
                         </div>
                         

@@ -23,7 +23,7 @@ const app = express();
 
 app.post('/send-email', (req, res) => {
     // TODO: Implement email sending logic
-  
+  const email = req.body.email;
 // Create a transporter object with your SMTP server configuration
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',

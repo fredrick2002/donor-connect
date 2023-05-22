@@ -1,6 +1,7 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-
+const cors = require('cors');
 const app = express();
 
 // Set up the transporter
@@ -13,12 +14,14 @@ const transporter = nodemailer.createTransport({
     pass: 'Donor@1234',
   },
 });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-
-
-
+app.use(cors());
 // Define a route to send an email
-app.get('/send-email', (req, res) => {
+app.post('/api/send-email', (req, res) => {
+  const email = req.body.email;
+  console.log(email);
 const emailContent = `
   <div style="background-color: #f2f2f2; padding: 20px;">
     <h1 style="color: #006699; font-size: 28px;">Hello World!</h1>
@@ -27,7 +30,7 @@ const emailContent = `
 `;
   const mailOptions = {
     from: 'donorconn@outlook.com',
-    to: 'fredricksolomon2002@gmail.com',
+    to: email,
     subject: 'Your email subject',
     text: emailContent,
   };
@@ -45,6 +48,6 @@ const emailContent = `
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+app.listen(3002, () => {
+  console.log('Server started on port 3002');
 });

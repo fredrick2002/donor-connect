@@ -16,11 +16,15 @@ export default function Hoslogin(){
       const responseData = response.data;
       if(responseData && responseData.length > 0){
         const idhospi_reg = response.data[0].hospi_id;
+        const idhospi_name = response.data[0].hospi_name;
         console.log(idhospi_reg);
+        console.log(idhospi_name);
+        console.log(response.data);
         if(idhospi_reg === ''){
           alert("The Email and Password Doesn't Match");
         }else{
           sessionStorage.setItem('idhospi', idhospi_reg);
+          sessionStorage.setItem('namehospi', idhospi_name);
           window.location.href = '/hprofile';
         }
       }else{

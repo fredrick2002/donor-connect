@@ -157,7 +157,7 @@ app.get("/api/hospiVal", (req,res)=>{
 app.post("/api/hloginVal", (req,res)=>{
     const { hospi_id, password } = req.body;
     console.log(req.body);
-    const sqlhLogin = `SELECT hospi_id FROM hospi_reg WHERE hospi_id ='${hospi_id}'AND password = '${password}'`;
+    const sqlhLogin = `SELECT hospi_id,hospi_name FROM hospi_reg WHERE hospi_id ='${hospi_id}'AND password = '${password}'`;
     db.query(sqlhLogin, (err, results) => {
         if (err) {
             console.log(err);
@@ -222,7 +222,48 @@ app.get("/api/hprofile_del",(req,res)=>{
     
 })
 
+app.get("/api/hprofile_del",(req,res)=>{
+    const hospi_id = req.query.hospi_id;
+    const sqlhProfile=`SELECT * FROM blood_req WHERE hospi_id=?`
+    const sqlTimeDelete = `DELETE FROM blood_req WHERE req_date <= NOW();`
+    db.query(sqlhProfile,[hospi_id], (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            console.log(results);
+            res.json(results);
+        }
+        // console.log(results);
+    });
+    db.query(sqlTimeDelete, (err, deleteResults) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Rows deleted:", deleteResults.affectedRows);
+        }
+      });
+    
+})
 
+app.get("/api/home_page",(req,res)=>{
+const district = req.query.district;
+  const blood_grp = req.query.blood_grp;
+    console.log(district);
+    const sqlHomepage=`SELECT hospi_name,city,req_date,blood_grp FROM blood_req INNER JOIN hospi_reg ON blood_req.hospi_id = hospi_reg.hospi_id WHERE city=? AND blood_grp =?;`
+    db.query(sqlHomepage,[district,blood_grp], (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ message: "Internal server error" });
+        } else {
+            console.log(results);
+            // console.log("hello");
+            res.json(results);
+        }
+        // console.log(results);
+    });
+    
+})
 
 app.listen(3001, () =>{
     console.log("running on port 3001");
